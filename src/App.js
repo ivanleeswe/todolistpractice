@@ -20,7 +20,8 @@ class App extends React.Component {
     let userInputs = [...this.state.userInputs];
     userInputs.push(this.state.name)
     this.setState({
-      userInputs: userInputs
+      name: '',
+      userInputs: userInputs,
     })
   }
 
@@ -33,7 +34,7 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <Form handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+        <Form handleSubmit={this.handleSubmit} handleChange={this.handleChange} name={this.state.name}/>
         <FormList groceriesList={this.state.userInputs}/>
       </div>
     )

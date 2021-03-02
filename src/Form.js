@@ -4,7 +4,7 @@ function Form(props) {
 
   return (
     <form onSubmit={e => {props.handleSubmit(e)}}>
-      <input type="text" name="name" onChange={e => {props.handleChange(e)}}>
+      <input type="text" name="name" value={props.name} onChange={e => {props.handleChange(e)}}>
       </input>
       <input type="submit" value="Submit"> 
       </input>
