@@ -1,13 +1,14 @@
 import React from 'react';
 import Form from './Form';
-import Item from './Item';
+import FormList from './FormList';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: ""
+      name: "",
+      userInputs: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +17,11 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    let userInputs = [...this.state.userInputs];
+    userInputs.push(this.state.name)
+    this.setState({
+      userInputs: userInputs
+    })
   }
 
   handleChange(e) {
@@ -29,7 +34,7 @@ class App extends React.Component {
     return(
       <div>
         <Form handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
-        <Item groceryItem={this.state.name}/>
+        <FormList groceriesList={this.state.userInputs}/>
       </div>
     )
   }
