@@ -1,6 +1,10 @@
 import React from 'react';
 import Form from './Form';
 import FormList from './FormList';
+import studyPic2 from './study2.png'
+
+
+import './App.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +37,9 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="app">
+        <img src={studyPic2} alt="Girl studying2" width="300" height="200"/>
+        <div clasName="title">To Do List</div>
         <Form handleSubmit={this.handleSubmit} handleChange={this.handleChange} name={this.state.name}/>
         <FormList groceriesList={this.state.userInputs}/>
       </div>

@@ -8,7 +8,7 @@ function Form(props) {
       </input>
       <input type="submit" value="Submit"> 
       </input>
-    </form>
+    </form> 
   )
 }
 
